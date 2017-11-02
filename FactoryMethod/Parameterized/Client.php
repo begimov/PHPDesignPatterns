@@ -1,18 +1,15 @@
 <?php
 
-include_once('GraphicFactory.php');
-include_once('TextFactory.php');
+include_once('CountryFactory.php');
+include_once('TextProduct.php');
 
 class Client
 {
-    private $graphicObj;
-    private $textObj;
+    private $countryFactory;
 
     public function __construct()
     {
-        $this->graphicObj = new GraphicFactory();
-        echo $this->graphicObj->startFactory();
-        $this->textObj = new TextFactory();
-        echo $this->textObj->startFactory();
+        $this->countryFactory = new CountryFactory();
+        echo $this->countryFactory->doFactory(new TextProduct());
     }
 }
